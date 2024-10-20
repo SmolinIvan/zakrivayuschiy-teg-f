@@ -17,4 +17,62 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  /*указать альтеранитвный системный шрифт*/
+
+  font-family: var(--main-font);
+  background-color: var(--background-color);
+  color: var(--font-color);
+  background-image: var(--background-gradient-img);
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+  align-items: center;
+  margin-top: 100px;
+  background-color: var(--background-color);
+  padding-bottom: 25px;
+  border: var(--card-border);
+}
+
+.main_header {
+  font-size: 49px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.theme-menu {
+  margin-top: 25px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 14px;
+}
+
+.theme-menu__button {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.main_content {
+  margin-top: 100px;
+}
+
+.card {
+  background-color: var(--background-color);
+  border: var(--card-border);
+}
+
+
+.van {
+  width: 100%;
+  height: 100%;
 }
