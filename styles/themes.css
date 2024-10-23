@@ -6,6 +6,7 @@
 */
 
 :root.theme-light {
+    --btn-bgd: #FFFFFF;
     --background-color: #FFFFFF;
     --main-font: 'Press2Start', sans-serif, monosapce;
     --font-color: #000000;
@@ -20,6 +21,7 @@
 }
 
 :root.theme-dark {
+    --btn-bgd: #00CC14;
     --background-color: #000000;
     --main-font: 'Press2Start', sans-serif, monosapce;
     --font-color: #00CC14;

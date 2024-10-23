@@ -13,16 +13,106 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+
 @keyframes arrowMoving {
     0% {
-        margin-left: -20px;
+        transform:translateX(-20px);
     }
 
     50% {
-        margin-left: -16px
+        transform:translateX(-16px);
     }
 
     100% {
-        margin-left: -20px
+        transform:translateX(-20px);
     }
 }
+
+@keyframes fillMainBody {
+    0% {
+        fill: red;
+    }
+    
+    100% {
+        fill: red;
+    }
+}
+
+@keyframes likeContour {
+    0% {
+        fill: transparent;
+    }
+
+    20% {
+        fill: red;
+    }
+
+    100% {
+        fill: red;
+    }
+}
+
+@keyframes likeCore {
+    0% {
+        fill: black;
+    }
+
+    40% {
+        fill: red;
+    }
+
+    100% {
+        fill: red;
+    }
+}
+
+@keyframes bigHeart {
+    55% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.5);
+    }
+
+    65% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes sparks {
+    60% {
+        color: transparent;
+    }
+
+    80% {
+        color: red;
+    }
+
+    100% {
+        color: transparent;
+    }
+}
+
+/*@keyframes changeRedBody {*/
+/*    0% {*/
+/*        fill:red;*/
+/*    }*/
+
+/*    100% {*/
+/*        fill: red;*/
+/*    }*/
+
+/*    20% {*/
+/*        fill: red;*/
+/*    }*/
+
+/*    100% {*/
+/*        fill: red;*/
+/*    }*/
+/*}*/
+
