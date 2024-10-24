@@ -6,14 +6,14 @@
 */
 
 :root.theme-light {
-    --btn-bgd: #FFFFFF;
-    --background-color: #FFFFFF;
+    --accent-color: #000000;
+    --bgd-color: #FFFFFF;
     --main-font: 'Press2Start', sans-serif, monosapce;
-    --font-color: #000000;
     --secondary-font: 'Inter-Variable', sans-serif, monosapce;
     --title-card-weight: 700;
     --text-card-weight: 400;
-    --card-border: 2px solid #000000;
+    --element-border: 2px solid #000000;
+    --btn-fill-color: #FFFFFF;
     --background-gradient-img:
             repeating-linear-gradient(to right, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
             repeating-linear-gradient(to bottom, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -21,14 +21,14 @@
 }
 
 :root.theme-dark {
-    --btn-bgd: #00CC14;
-    --background-color: #000000;
+    --accent-color: #00CC14;
+    --bgd-color: #000000;
     --main-font: 'Press2Start', sans-serif, monosapce;
-    --font-color: #00CC14;
     --secondary-font: 'Inter-Variable', sans-serif, monosapce;
     --title-card-weight: 785;
     --text-card-weigth: 465;
-    --card-border: 2px solid #00CC14;
+    --element-border: 2px solid #00CC14;
+    --btn-fill-color: #00CC14;
     --background-gradient-img:
             repeating-linear-gradient(to right, #000 0px, #000 2px, transparent 2px, transparent 4px),
             repeating-linear-gradient(to bottom, #000 0px, #000 2px, transparent 2px, transparent 4px),
@@ -38,12 +38,14 @@
 @media (prefers-color-scheme: light) {
     :root {
         /* Дублируем переменные светлой темы */
-        --background-color: #FFFFFF;
+        --accent-color: #000000;
+        --bgd-color: #FFFFFF;
         --main-font: 'Press2Start', sans-serif, monosapce;
-        --font-color: #000000;
         --secondary-font: 'Inter-Variable', sans-serif, monosapce;
         --title-card-weight: 700;
-        --text-card-weigth: 400;
+        --text-card-weight: 400;
+        --element-border: 2px solid #000000;
+        --btn-fill-color: #FFFFFF;
         --background-gradient-img:
                 repeating-linear-gradient(to right, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
                 repeating-linear-gradient(to bottom, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),

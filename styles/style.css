@@ -13,6 +13,9 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+body {
+  box-sizing: border-box;
+}
 
 .page {
   display: flex;
@@ -20,11 +23,10 @@
   align-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-color: white;
   /*указать альтеранитвный системный шрифт*/
-
   font-family: var(--main-font);
-  background-color: var(--background-color);
-  color: var(--font-color);
+  color: var(--accent-color);
   background-image: var(--background-gradient-img);
   background-size: cover;
   padding-bottom: 100px;
@@ -42,9 +44,9 @@ button {
   padding-top: clamp(120px, 37.3%, 136px);
   align-items: center;
   margin-top: 100px;
-  background-color: var(--background-color);
+  background-color: var(--bgd-color);
   padding-bottom: 22px;
-  border: var(--card-border);
+  border: var(--element-border);
 }
 
 .main_header {
@@ -100,8 +102,8 @@ button {
 
 .card {
   flex-direction: column;
-  background-color: var(--background-color);
-  border: var(--card-border);
+  background-color: var(--bgd-color);
+  border: var(--element-border);
 }
 
 .card_title {
@@ -110,7 +112,7 @@ button {
   font-size: 18px;
   line-height: 22px;
   padding: 4px 10px 4px 10px;
-  border-bottom: var(--card-border);
+  border-bottom: var(--element-border);
 }
 
 .sprint_image {
@@ -119,18 +121,19 @@ button {
 
 .sprint_label {
   position: absolute;
-  color: var(--font-color);
+  color: var(--accent-color);
   opacity: 50%;
   top: 25px;
-  right: 13px;
+  right: clamp(13px, 3.5%, 25px);
   font-size: 14px;
   text-shadow:
-          -1px 0 var(--background-color),
-          0 1px var(--background-color),
-          1px 0 var(--background-color),
-          0 -1px var(--background-color);
-  -webkit-text-stroke-color: var(--background-color);
+          -1px 0 var(--bgd-color),
+          0 1px var(--bgd-color),
+          1px 0 var(--bgd-color),
+          0 -1px var(--bgd-color);
+  -webkit-text-stroke-color: var(--bgd-color);
   mix-blend-mode: hard-light;
+  z-index: 1;
 }
 
 .van {
@@ -138,22 +141,34 @@ button {
   height: 100%;
 }
 
-.retro {
-  filter: sepia(80%);
+.gray {
+  filter: grayscale(80%) brightness(140%);
+
 }
 
 .saturate {
-  filter: saturate(1000%);
+  filter: saturate(500%);
 }
 
+.hue-45 {
+  filter: hue-rotate(45deg);
+
+}
 .invert {
-  filter: invert(0.7);
+  filter: invert(0.8);
+}
+
+.sepia {
+  filter: sepia(80%);
 }
 
 .blur {
   filter: blur(1rem);
 }
 
+.hue-90 {
+  filter: hue-rotate(90deg) contrast(30%);
+}
 
 .card_content {
   display: flex;
@@ -163,8 +178,8 @@ button {
   font-weight: var(--text-card-weight);
   font-size: 18px;
   line-height: 21px;
-  border-top: var(--card-border);
-  padding: 27px 25px 25px 25px;
+  border-top: var(--element-border);
+  padding: 27px 25px 17px 25px;
 }
 
 .card_description {
@@ -175,43 +190,37 @@ button {
 }
 
 .card-like {
-  margin-left: auto;
   display: flex;
-  gap: 10px;
+  gap: 5px;
   flex-direction: row;
+  justify-content: end;
 }
 
-.main-body {
-  fill: var(--background-color);
-}
-
-.contour {
-  fill: var(--background-color);
+.card__icon-button {
+  padding: 0;
 }
 
 .sparks {
-  color: var(--background-color);
+  color: var(--bgd-color);
 }
 
 .like-icon .main-body {
-
-  fill: transparent;
-  transition: 0.3s;
-}
-
-.like-icon.contour {
   fill: transparent;
   transition: 0.3s 0.03s;
 }
 
+.like-icon .contour {
+  fill: transparent;
+  transition: 0.3s;
+}
 
 .like-icon:hover .main-body {
-  fill: var(--font-color);
+  fill: var(--accent-color);
   transition: 0.3s;
 }
 
 .like-icon:hover .contour {
-  fill: var(--font-color);
+  fill: var(--accent-color);
   transition: 0.3s 0.05s;
 }
 
@@ -230,44 +239,19 @@ button {
 }
 
 .is-liked .contour {
-  animation: likeContour 0.3s forwards;
+  animation: fillContour 0.3s 0.1s forwards;
 
 }
 .is-liked .core {
-  animation: likeCore 0.3s forwards;
+  animation: fillCore 0.3s 0.1s forwards;
 }
 
-.is-liked {
-  animation: bigHeart 0.3s both ease-in;
+.is-liked .heart {
+  animation: bigHeart 0.3s 0.1s both ease-in;
 }
 
 .is-liked .sparks {
   animation: sparks 0.3s both;
-}
-
-.like-icon {
-  width: 39px;
-  height: 36px;
-  display: flex;
-  margin-top: 5px;
-}
-
-
-
-
-
-.card__icon-button {
-  margin-left: auto;
-  padding: 0;
-}
-
-.button__text {
-  position: relative;
-  font-weight: 400;
-  font-size:14px;
-  z-index: 1;
-  color: var(--btn-bgd);
-  mix-blend-mode: difference;
 }
 
 .card__like-button {
@@ -278,31 +262,41 @@ button {
   justify-content: center;
   font-family: var(--main-font);
   font-weight: inherit;
-  border: var(--card-border);
+  border: var(--element-border);
   width: 130px;
   height: 38px;
   padding: 0;
   cursor: pointer;
 }
 
+.button__text {
+  position: relative;
+  font-weight: 400;
+  font-size:14px;
+  z-index: 1;
+  color: var(--btn-fill-color);
+  mix-blend-mode: difference;
+}
+
 .card__like-button::before,
-.footer-button::before {
+.footer-button::before,
+.close-button::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  background-color: var(--btn-bgd);
+  background-color: var(--btn-fill-color);
   transform: scale(0, 1);
   width: 100%;
   height: 100%;
   transition: transform 0.5s ease-in-out;
   transform-origin: 0;
   mix-blend-mode: difference;
-
 }
 
 .card__like-button:hover::before,
-.footer-button:hover::before {
+.footer-button:hover::before,
+.close-button:hover::before{
   transform: scaleX(100%);
 }
 
@@ -314,22 +308,20 @@ button {
 }
 
 .footer {
-  width: clamp(306px, 83%, 335px);
   align-self: center;
   position: relative;
-  border: var(--card-border);
+  border: var(--element-border);
 }
 
 .footer-button {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 14px;
   gap: 8px;
   align-items: center;
-  padding: 13px 0 13px 0;
-  background-color: var(--background-color);
-
+  padding: 13px 18px 13px 18px;
+  background-color: var(--bgd-color);
 }
 
 .footer-button:hover {
@@ -337,12 +329,71 @@ button {
 }
 
 .floppy-icon {
-  width: 28px;
-  height: 28px;
+  width: 21px;
+  height: 21px;
 }
 
-@media (min-width: 1440px) {
-  .header {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+dialog {
+  background-color: var(--bgd-color);
+  color: var(--accent-color);
+  width: 356px;
+  position: fixed;
+  inset: 0;
+  padding: 30px 30px 30px 30px;
+}
+
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(7px);
+}
+
+.save_memories_content {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
+
+.memory_text {
+  font-size: 14px;
+  line-height: 21px;
+  min-height: 100%;
+  text-transform: uppercase;
+}
+
+.floppy-icon-memories {
+  align-self: center;
+  min-width: 40px;
+  height: 40px;
+}
+
+.close-button {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: var(--element-border);
+  height: 38px;
+}
+
+@media (width <= 375px) {
+  .footer-button {
+    flex-direction: column;
+  }
+
+  .floppy-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  dialog{
+    width: 91%;
+    padding: 30px 40px 30px 40px;
   }
 }

@@ -29,19 +29,12 @@
 }
 
 @keyframes fillMainBody {
-    0% {
-        fill: red;
-    }
-    
     100% {
         fill: red;
     }
 }
 
-@keyframes likeContour {
-    0% {
-        fill: transparent;
-    }
+@keyframes fillContour {
 
     20% {
         fill: red;
@@ -52,9 +45,9 @@
     }
 }
 
-@keyframes likeCore {
+@keyframes fillCore {
     0% {
-        fill: black;
+        fill: currentColor;
     }
 
     40% {
@@ -67,16 +60,13 @@
 }
 
 @keyframes bigHeart {
-    55% {
+    0% {
         transform: scale(1);
     }
 
-    60% {
-        transform: scale(1.5);
-    }
-
-    65% {
-        transform: scale(1);
+    50% {
+        transform-origin: 50% 50%;
+        transform: scale(1.05);
     }
 
     100% {
