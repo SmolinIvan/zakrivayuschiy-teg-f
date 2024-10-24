@@ -309,17 +309,15 @@
           </div>
         </div>
       </article>
-      <footer class="footer">
-        <button class="footer-button"
+        <button class="save__memories-button"
                 type="button"
-                onclick="window.save_memories.showModal();"
+                onclick="window['save_memories'].showModal();"
                 aria-controls="save_memories">
             <svg class="floppy-icon" viewBox="0 0 40 40">
               <use href="svg/floppy.svg#floppy"/>
             </svg>
           <span class="button__text">Сохранить на память</span>
         </button>
-      </footer>
     </main>
     <dialog id="save_memories">
       <div class="save_memories_content">
@@ -329,9 +327,9 @@
         <span class="memory_text">Вставьте дискету, чтобы продолжить</span>
       </div>
       <button class="close-button"
-              type="submit"
+              type="button"
               onclick="window['save_memories'].close()">
-        <span class="button__text save_button_text">ОК</span>
+        <span class="button__text">ОК</span>
       </button>
     </dialog>
     <script src="./scripts/like.js"></script>
