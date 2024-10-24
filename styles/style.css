@@ -23,7 +23,6 @@ body {
   align-items: center;
   padding-bottom: 100px;
   color: var(--accent-color);
-  /*указать альтеранитвный системный шрифт*/
   font-family: var(--main-font);
   font-variation-settings: 'wght' var(--text-card-weight);
   background-color: white;
