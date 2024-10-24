@@ -15,19 +15,6 @@
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
-    <dialog id="save_memories">
-      <div class="save_memories_content">
-        <svg class="floppy-icon-memories" viewBox="0 0 40 40">
-          <use href="svg/floppy.svg#floppy"/>
-        </svg>
-        <span class="memory_text">Вставьте дискету, чтобы продолжить</span>
-      </div>
-      <button class="close-button"
-              type="button"
-              onclick="window['save_memories'].close();">
-        <span class="button__text">ОК</span>
-      </button>
-    </dialog>
     <header class="header">
       <h1 class="main_header">&lt;/HTML&gt;</h1>
       <h2 class="title">закрывающий тег</h2>
@@ -226,7 +213,7 @@
       <article class="card">
         <h2 class="card_title">3 спринт: Обходные стратегии</h2>
         <div class="sprint_image">
-          <span class="sprint_label">&lt/support></span>
+          <span class="sprint_label">&lt;/support&gt;</span>
           <img
                   class="van sepia"
                   alt="Фургончик с мороженным остановился у обочины. Вокруг стоят пышные деревья, а на ночном небе мерцают звезды. Картинка выцвела, как старое фото"
@@ -259,7 +246,7 @@
       <article class="card">
         <h2 class="card_title">3 спринт: Когда опускаются руки</h2>
         <div class="sprint_image">
-          <span class="sprint_label">&lt;lifes-style: none;&lt;</span>
+          <span class="sprint_label">&lt;lifes-style: none;&gt;</span>
           <img
                   class="van blur"
                   alt="Фургончик с мороженным остановился у обочины. Вокруг стоят пышные деревья, а на ночном небе мерцают звезды. Изображение размыто, кроме фургончика сложно различить что-либо еще"
@@ -325,8 +312,8 @@
       <footer class="footer">
         <button class="footer-button"
                 type="button"
-                onclick="window['save_memories'].showModal();"
-                aria-controls="dialog-id">
+                onclick="window.save_memories.showModal();"
+                aria-controls="save_memories">
             <svg class="floppy-icon" viewBox="0 0 40 40">
               <use href="svg/floppy.svg#floppy"/>
             </svg>
@@ -334,6 +321,19 @@
         </button>
       </footer>
     </main>
+    <dialog id="save_memories">
+      <div class="save_memories_content">
+        <svg class="floppy-icon-memories" viewBox="0 0 40 40">
+          <use href="svg/floppy.svg#floppy"/>
+        </svg>
+        <span class="memory_text">Вставьте дискету, чтобы продолжить</span>
+      </div>
+      <button class="close-button"
+              type="submit"
+              onclick="window['save_memories'].close()">
+        <span class="button__text save_button_text">ОК</span>
+      </button>
+    </dialog>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
